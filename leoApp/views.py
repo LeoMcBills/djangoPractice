@@ -4,8 +4,15 @@ from .models import Feature
 
 # Create your views here.
 def index(request):
-    Feature1 = Feature()
-    Feature1.id = 1
-    Feature1.name = 'app1'
-    Feature1.detail = 'This is app1'
-    return render(request, 'index.html', {'feature' : Feature1})
+    feature1 = Feature()
+    feature1.id = 1
+    feature1.name = 'app1'
+    feature1.detail = 'This is app1'
+
+    feature2 = Feature()
+    feature2.id = 2
+    feature2.name = 'Smart vTracker'
+    feature2.detail = 'We offer advanced already-made and customized tracking solutions to individuals, companies and governments.'
+
+    feature = [feature1, feature2,]
+    return render(request, 'index.html', {'feature' : feature})
