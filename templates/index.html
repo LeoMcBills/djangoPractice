@@ -23,7 +23,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
             <div class="container px-5">
-                <a class="navbar-brand fw-bold" href="#page-top">View Product</a>
+                <a class="navbar-brand fw-bold" href="#page-top">Product</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="bi-list"></i>
@@ -48,7 +48,8 @@
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
                         <!-- Mashead text and app badges-->
-                        {{for item in feature}}
+                        {% for item in feature %}
+                        {% if item.id == 2 %}
                         <div class="mb-5 mb-lg-0 text-center text-lg-start">
                             <h1 class="display-1 lh-1 mb-3">{{item.name}}.</h1>
                             <p class="lead fw-normal text-muted mb-5">{{item.detail}}</p>
@@ -57,7 +58,8 @@
                                 <a href="#!"><img class="app-badge" src="{% static 'assets/img/app-store-badge.svg' %}" alt="..." /></a>
                             </div>
                         </div>
-                        {{endfor}}
+                        {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="col-lg-6">
                         <!-- Masthead device mockup feature-->
